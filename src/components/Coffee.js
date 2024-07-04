@@ -9,7 +9,7 @@ function Coffee(props) {
   return (
     <div className="g-col-6 d-flex flex-column  coffee-container">
       <div className="p-2 bd-highlight ">
-        {props.coffeePopular ? <span className="popular">popular</span> : " "}
+        {props.coffeePopular && <span className="popular">popular</span> }
         <img variant="top" src={props.coffeeImage} className="coffeeImage " />
       </div>
       <div className="coffee-information d-flex flex-column">
@@ -25,13 +25,11 @@ function Coffee(props) {
             ) : (
               <span>No ratings</span>
             )}
-            {props.coffeeVotes != 0 ? (
+            {props.coffeeVotes != 0 && (
               <span className="votes">({props.coffeeVotes} votes)</span>
-            ) : (
-              " "
-            )}
+            ) }
           </div>
-          {props.coffeeAvailable ? " " : <span className="sold-out">sold out</span>}
+          {props.coffeeAvailable || <span className="sold-out">sold out</span>}
         </div>
       </div>
     </div>
