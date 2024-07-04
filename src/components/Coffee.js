@@ -1,38 +1,38 @@
 import React from "react";
-import Card from "react-bootstrap/Card";
 import starIconFill from "../images/Star_fill.svg";
 import starIcon from "../images/Star.svg";
 import "./Coffee.css";
-function Coffee(props) {
-  console.log(props.coffee);
+function Coffee({coffee}) {
+  console.log(coffee);
 
   return (
     <div className="g-col-6 d-flex flex-column  coffee-container">
       <div className="p-2 bd-highlight ">
-        {props.coffeePopular && <span className="popular">popular</span> }
-        <img variant="top" src={props.coffeeImage} className="coffeeImage " />
+        {coffee.popular && <span className="popular">popular</span> }
+        <img variant="top" src={coffee.image} className="coffeeImage " />
       </div>
       <div className="coffee-information d-flex flex-column">
         <div className="coffee-text d-flex justify-content-between">
-          <div className="coffee-name">{props.coffeeName}</div>
-          <div className="coffee-price">{props.coffeePrice}</div>
+          <div className="coffee-name">{coffee.name}</div>
+          <div className="coffee-price">{coffee.price}</div>
         </div>
         <div className="bd-highlight d-flex justify-content-between coffee-details">
           <div className="coffee-rating">
-            <img className="starIcon"src={props.coffeeRating !== null ? starIconFill : starIcon} />
-            {props.coffeeRating ? (
-              <span>{props.coffeeRating}</span>
+            <img className="starIcon"src={coffee.rating !== null ? starIconFill : starIcon} />
+            {coffee.rating ? (
+              <span>{coffee.rating}</span>
             ) : (
               <span>No ratings</span>
             )}
-            {props.coffeeVotes != 0 && (
-              <span className="votes">({props.coffeeVotes} votes)</span>
+            {coffee.votes != 0 && (
+              <span className="votes">({coffee.votes} votes)</span>
             ) }
           </div>
-          {props.coffeeAvailable || <span className="sold-out">sold out</span>}
+          {coffee.available ? <span className="sold-out">sold out</span> : null}
         </div>
       </div>
     </div>
+    
   );
 }
 

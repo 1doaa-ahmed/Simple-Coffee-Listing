@@ -11,16 +11,10 @@ function Menu() {
   // const [products, setProducts] = useState([]
   return (
     <CardGroup className="menu-container">
-      {coffeeList.map((i) => (
+      {coffeeList.map((coffee) => (
         <Coffee
-          key={i.id}
-          coffeeName={i.name}
-          coffeeImage={i.image}
-          coffeePrice={i.price}
-          coffeeRating={i.rating}
-          coffeeVotes={i.votes}
-          coffeePopular={i.popular}
-          coffeeAvailable={i.available}
+          key={coffee.id}
+          coffee={coffee}
         />
       ))}
     </CardGroup>
