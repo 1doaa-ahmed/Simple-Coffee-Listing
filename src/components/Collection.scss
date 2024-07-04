@@ -1,0 +1,59 @@
+@import "./Variables.scss";
+
+.collection-container {
+  background-color: $gray-color;
+  position: relative;
+  margin: -200px 50px 50px 50px;
+  border-radius: 15px;
+  padding: 70px 40px;
+  color: white;
+  text-align: center;
+  .vector{
+    position: absolute;
+    top: 40px;
+  }
+  .collection-title {
+    z-index: 1;
+    font-size: 32px;
+  }
+  .collection-description {
+    width: 450px;
+    z-index: 1;
+    color: $light-gray-color;
+    margin: auto;
+    font-size: 16px;
+  }
+  .options {
+    margin-top: 30px;
+    font-size: 16px;
+    .all-products {
+      margin-right: 20px;
+      background-color: $light-gray-color;
+      padding: 8px 12px;
+      border-radius: 10px;
+    }
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 640px) {
+  .collection-container {
+    margin-top: -100px ;
+    
+  }
+}
+
+@media (max-width: 639px)  {
+  .collection-container {
+    margin-top: -50px ;
+    .collection-description {
+      width: fit-content;
+    }
+  }
+}
+@media (max-width: 680px)  {
+  .collection-container {
+    .vector{
+      right: 50px;
+    }
+  }
+}

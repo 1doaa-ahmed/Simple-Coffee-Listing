@@ -1,0 +1,59 @@
+@import "./Variables.scss";
+.coffee-container {
+  margin: 20px auto;
+  .coffeeImage {
+    border-radius: 15px;
+  }
+  .popular {
+    position: absolute;
+    margin: 8px;
+    color: $black-color;
+    font-size: 10px;
+    background-color: $light-orange-color;
+    padding: 4px 10px;
+    font-weight: 700;
+    border-radius: 15px;
+  }
+  .coffee-information {
+      padding:0 15px;
+    .coffee-text {
+      font-weight: 600;
+      .coffee-name {
+        font-size: 14px;
+      }
+      .coffee-price {
+        background-color: $light-green-color;
+        color: $black-color;
+        font-size: 12px;
+        border-radius: 4px;
+        padding: 3px 7px;
+      }
+    }
+  }
+  .coffee-details {
+    // padding:0 15px;
+    margin-top: 5px;
+    .coffee-rating {
+      font-size: 14px;
+      font-weight: 500;
+      .starIcon {
+        margin-top: -5px;
+        margin-right: 5px;
+      }
+      .votes {
+        color: $light-gray-color;
+      }
+    }
+    .sold-out {
+      color: $orange-color;
+    }
+  }
+}
+@media (max-width: 575px) {
+  .coffee-text {
+    padding: 0 40px;
+  }
+  .coffee-details {
+    margin: 0 40px;
+  }
+}

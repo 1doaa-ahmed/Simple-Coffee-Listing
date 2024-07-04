@@ -1,0 +1,9 @@
+.menu-container {
+  margin: 50px 130px;
+}
+
+@media (max-width: 1024px) {
+  .menu-container {
+    margin: 50px 0px;
+  }
+}/*# sourceMappingURL=Menu.css.map */

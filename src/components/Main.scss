@@ -1,0 +1,9 @@
+@import './Variables.scss';
+.main-container{
+    height: 100%;
+    background-color : $black-color; 
+    padding-bottom: 50px;
+    .backgroundImage{
+        width: 100%;
+    }
+}
