@@ -1,7 +1,7 @@
 import React from "react";
-import "./Collection.css";
-import Menu from "./Menu";
-import icon from "../images/vector.svg";
+import "../styles/Collection.css";
+import Menu from "./CoffeeMenu";
+import icon from "../../images/vector.svg";
 function Collection() {
   return (
     <div className="collection-container d-flex flex-column bd-highlight mb-3">

@@ -1,10 +1,10 @@
 import React from "react";
-import backgroundImage from'../images/bg-cafe.jpg' 
-import './Main.css'
+import backgroundImage from'../../images/bg-cafe.jpg' 
+import '../styles/MainPage.css'
 import Collection from "./Collection";
 function Main() {
   return <div className="main-container">
-    <img src={backgroundImage} className="backgroundImage"/>
+    <img src={backgroundImage} className="backgroundImage" alt="backgroundImage"/>
     <Collection />
     </div>;
 }

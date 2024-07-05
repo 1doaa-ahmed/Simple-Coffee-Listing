@@ -1,7 +1,7 @@
 import React from "react";
-import starIconFill from "../images/Star_fill.svg";
-import starIcon from "../images/Star.svg";
-import "./Coffee.css";
+import starIconFill from "../../images/Star_fill.svg";
+import starIcon from "../../images/Star.svg";
+import "../styles/CoffeeCard.css";
 function Coffee({coffee}) {
   console.log(coffee);
 
@@ -9,7 +9,7 @@ function Coffee({coffee}) {
     <div className="g-col-6 d-flex flex-column  coffee-container">
       <div className="p-2 bd-highlight ">
         {coffee.popular && <span className="popular">popular</span> }
-        <img variant="top" src={coffee.image} className="coffeeImage " />
+        <img variant="top" src={coffee.image} className="coffeeImage " alt={coffee.name}/>
       </div>
       <div className="coffee-information d-flex flex-column">
         <div className="coffee-text d-flex justify-content-between">
@@ -24,11 +24,11 @@ function Coffee({coffee}) {
             ) : (
               <span>No ratings</span>
             )}
-            {coffee.votes != 0 && (
+            {coffee.votes !== 0 && (
               <span className="votes">({coffee.votes} votes)</span>
             ) }
           </div>
-          {coffee.available ? <span className="sold-out">sold out</span> : null}
+          {coffee.available ? null : <span className="sold-out">sold out</span>}
         </div>
       </div>
     </div>
