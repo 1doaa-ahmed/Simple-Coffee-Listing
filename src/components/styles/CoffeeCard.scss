@@ -1,6 +1,9 @@
 @import "./Variables.scss";
 .coffee-container {
   margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+
   .coffeeImage {
     border-radius: 15px;
   }
@@ -15,9 +18,11 @@
     border-radius: 15px;
   }
   .coffee-information {
-      padding:0 15px;
+    padding: 15px;
     .coffee-text {
       font-weight: 600;
+      display: flex;
+      justify-content: space-between;
       .coffee-name {
         font-size: 14px;
       }
@@ -32,13 +37,17 @@
   }
   .coffee-details {
     // padding:0 15px;
-    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    // margin-top: 5px;
     .coffee-rating {
       font-size: 14px;
-      font-weight: 500;
+      margin-top: -5px;
       .starIcon {
-        margin-top: -5px;
+        font-weight: 500;
         margin-right: 5px;
+        position: relative;
+        top: 7px;
       }
       .votes {
         color: $light-gray-color;

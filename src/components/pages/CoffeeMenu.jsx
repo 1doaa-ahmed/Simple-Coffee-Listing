@@ -1,32 +1,30 @@
 import React, { useEffect, useState } from "react";
 import Coffee from "./CoffeeCard";
-import CardGroup from "react-bootstrap/CardGroup";
-
 import "../styles/CoffeeMenu.css";
 
-function Menu() {
+function CoffeeMenu({ step }) {
   const [coffeeList, setCoffeeList] = useState([]);
-
   useEffect(() => {
-    fetch("https://raw.githubusercontent.com/devchallenges-io/web-project-ideas/main/front-end-projects/data/simple-coffee-listing-data.json")
-      .then(response => response.json())
-      .then(data => {
-        console.log(data);
+    fetch(
+      "https://raw.githubusercontent.com/devchallenges-io/web-project-ideas/main/front-end-projects/data/simple-coffee-listing-data.json"
+    )
+      .then((response) => response.json())
+      .then((data) => {
         setCoffeeList(data);
       })
-      .catch(error => console.error(error));
-  }, []); 
+      .catch((error) => console.error(error));
+  }, []);
 
   return (
-    <CardGroup className="menu-container">
-      {coffeeList.map(coffee => (
-        <Coffee
-          key={coffee.id}
-          coffee={coffee}
-        />
-      ))}
-    </CardGroup>
+    <div className="menu-container">
+      {step === 0 &&
+        coffeeList.map((coffee) => <Coffee key={coffee.id} coffee={coffee} />)}
+      {step === 1 &&
+        coffeeList
+          .filter((coffee) => coffee.available)
+          .map((coffee) => <Coffee key={coffee.id} coffee={coffee} />)}
+    </div>
   );
 }
 
-export default Menu;
+export default CoffeeMenu;

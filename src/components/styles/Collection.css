@@ -5,6 +5,8 @@
   border-radius: 15px;
   padding: 70px 40px;
   color: white;
+  display: flex;
+  flex-direction: column;
   text-align: center;
 }
 .collection-container .vector {
@@ -14,6 +16,7 @@
 .collection-container .collection-title {
   z-index: 1;
   font-size: 32px;
+  padding: 2px;
 }
 .collection-container .collection-description {
   width: 450px;
@@ -21,16 +24,28 @@
   color: #6F757C;
   margin: auto;
   font-size: 16px;
+  padding: 2px;
+  line-height: 1.7;
 }
 .collection-container .options {
   margin-top: 30px;
-  font-size: 16px;
 }
-.collection-container .options .all-products {
-  margin-right: 20px;
-  background-color: #6F757C;
-  padding: 8px 12px;
+.collection-container .options .option {
+  font-size: 15px;
+  border: none;
   border-radius: 10px;
+  padding: 8px 13px;
+  margin: 0 10px;
+}
+.collection-container .options .option:hover {
+  cursor: pointer;
+}
+.collection-container .options .active {
+  background-color: #6F757C;
+}
+.collection-container .options .notActive {
+  background-color: transparent;
+  color: white;
 }
 
 @media (max-width: 1024px) and (min-width: 640px) {

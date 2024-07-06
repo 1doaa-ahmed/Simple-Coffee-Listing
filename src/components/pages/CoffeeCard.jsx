@@ -3,20 +3,18 @@ import starIconFill from "../../images/Star_fill.svg";
 import starIcon from "../../images/Star.svg";
 import "../styles/CoffeeCard.css";
 function Coffee({coffee}) {
-  console.log(coffee);
-
   return (
-    <div className="g-col-6 d-flex flex-column  coffee-container">
-      <div className="p-2 bd-highlight ">
+    <div className="coffee-container">
+      <div className="coffeeImage-container">
         {coffee.popular && <span className="popular">popular</span> }
         <img variant="top" src={coffee.image} className="coffeeImage " alt={coffee.name}/>
       </div>
-      <div className="coffee-information d-flex flex-column">
-        <div className="coffee-text d-flex justify-content-between">
+      <div className="coffee-information">
+        <div className="coffee-text">
           <div className="coffee-name">{coffee.name}</div>
           <div className="coffee-price">{coffee.price}</div>
         </div>
-        <div className="bd-highlight d-flex justify-content-between coffee-details">
+        <div className="coffee-details">
           <div className="coffee-rating">
             <img className="starIcon"src={coffee.rating !== null ? starIconFill : starIcon} />
             {coffee.rating ? (
